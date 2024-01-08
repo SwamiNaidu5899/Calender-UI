@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+         * {
+            font-family: 'Poppins', sans-serif;
+          }
+        .container
+        {
+            height: 100vh;
+            width: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .calender
+        {
+            height: 80vh;
+            width: 21%;
+            background: linear-gradient( skyblue,rgb(178, 214, 223));
+            border: 10px solid white;
+            border-radius: 50px;
+        }
+        .row-curve
+        {
+            height: 3vh;
+            width: 30%;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50px;
+            position: relative;
+            left: 35%;
+            top: 1vh;
+        }
+        .dot
+        {
+            height: 2vh;
+            width: 2vh;
+            background-color: rgb(62, 62, 62);
+            border-radius: 50%;
+            position: relative;
+            top: 0.5vh;
+            left: 75%;
+        }.row-text
+        {
+            height: 8vh;
+            width: 100%;
+            /* background-color: #fff; */
+        }
+        .row-text h3
+        {
+            text-align: center;
+            color: white;
+        }
+        .row-page
+        {
+            height: 40vh;
+            width: 80%;
+            /* background: #000; */
+            display: flex;
+        }
+        .page-1
+        {
+            height: 30vh;
+            width: 80%;
+            background: #ffffff;
+            padding: 0vh 2vh 12vh 2vh;
+            
+        }
+        .page-2
+        {
+            
+            height: 27vh;
+            width: 6%;
+            background: #ffffff;
+            position: relative;
+            top: 2.5vh;
+            box-shadow: 2px  rgb(203, 201, 201);
+            padding: 2vh 0 8vh 0vh;
+        }
+        .page-3
+        {
+            
+            height: 22vh;
+            width: 6%;
+            background: #ffffff;
+            position: relative;
+            top: 5vh;
+            box-shadow: 2px  rgb(203, 201, 201);
+            padding: 2vh 0 8vh 0vh;
+        }
+        .row-text-2
+        {
+            height: 3vh;
+            width: 100%;
+        }
+        .row-text-2 h4
+        {
+            color: white;
+            position: relative;
+            top: -16vh;
+            left: 5%;
+            font-size: 15px;
+        }
+        .row-footer p
+        {
+            font-size: 12px;
+            
+        }
+        .row-footer
+        {
+            height: 18vh;
+            width: 100%;
+            /* background-color: black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 28px;
+        }
+        .task-box-1
+        {
+            height: 15vh;
+            width: 12vh;
+            background:linear-gradient(rgba(30, 65, 162, 0.864),rgb(70, 128, 175));
+            border-radius: 12px;
+        }
+        .row-footer p
+        {
+            position: relative;
+            top: 2vh;
+            text-align: center;
+        }
+        .task-box-2
+        {
+            height: 13vh;
+            width: 12vh;
+            background-color: #fff;
+            position: relative;
+            left: 6%;
+            border-radius: 12px;
+        }
+        .task-box-3
+        {
+            height: 13vh;
+            width: 5vh;
+            background:rgba(149, 181, 235, 0.466);
+            position: relative;
+            left: 8%;
+            border-radius: 12px;
+        }
+        .h5::after
+        {
+            content: ">";
+        }
+        .row-day
+        {
+            height: 8vh;
+            width: 100%;
+            display: flex;
+            /* justify-content: space-between; */
+            justify-content: space-around;
+            margin-top: -4vh;
+        }
+        .day-name
+        {
+            height: 5vh;
+            width: 5vh;
+            /* background: aqua; */
+            margin-left: 1px;
+           
+        }
+        .day-name h5
+        {
+            text-align: center;
+            color: rgb(91, 173, 205);
+            font-size: 12px;
+        }
+        .day
+        {
+            height: 4vh;
+            width: 4vh;
+            /* background-color: aqua; */
+        }
+        .row-day p
+        {
+            font-size: px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 13px;
+        }
+        .p
+        {
+            color: gray;
+        }
+        .day p
+        {
+            font-size: 10px;
+        }
+        h6
+        {
+            height: 3vh;
+            width: 100%;
+            /* background-color: black; */
+            position: relative;
+            top: -12vh;
+            left: 7%;
+        }
+        .text
+        {
+            font-size: 10px;
+            position: relative;
+            top: -16vh;
+            left: 8%;
+        }
+        h3:is(:hover,:focus)
+        {
+            transform: scale(1.2);
+            letter-spacing: 5px;
+            transition: ease-in 2s;
+
+        }
+        @media screen and (min-width:368px)and (max-width:768px){
+
+            .calender
+            {
+                height: 100vh;
+                width: 100%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="calender">
+        <div class="row-curve">
+            <div class="dot"></div>
+        </div>
+         <div class="row-text">
+            <h3>myCalender</h3>
+         </div>
+         <div class="row-page">
+            <div class="page-1">
+                <h5 class="h5">Jan, 2024</h5>
+                <div class="row-day" style="position: relative; top: -2vh;">
+                    <div class="day-name"><h5>Mon</h5> </div>
+                    <div class="day-name"><h5>Tue</h5> </div>
+                    <div class="day-name"><h5>Wed</h5> </div>
+                    <div class="day-name"><h5>Thu</h5> </div>
+                    <div class="day-name"><h5>Fri</h5> </div>
+                    <div class="day-name"><h5>Sat</h5> </div>
+                    <div class="day-name"><h5>Sun</h5> </div>
+                   
+                </div>
+                <div class="row-day">
+                   <div class="day">
+                    <p>1</p>
+                   </div>
+                   <div class="day">
+                    <p>2</p>
+                   </div>
+                   <div class="day">
+                    <p>3</p>
+                   </div>
+                   <div class="day">
+                    <p>4</p>
+                   </div>
+                   <div class="day">
+                    <p>5</p>
+                   </div>
+                   <div class="day">
+                    <p>6</p>
+                   </div>
+                   <div class="day">
+                    <p>7</p>
+                   </div>
+                </div>
+                <div class="row-day">
+                    <div class="day">
+                        <p style="background-color: skyblue;">8</p>
+                       </div>
+                       <div class="day">
+                        <p>9</p>
+                       </div>
+                       <div class="day">
+                        <p>10</p>
+                       </div>
+                       <div class="day">
+                        <p>11</p>
+                       </div>
+                       <div class="day">
+                        <p>12</p>
+                       </div>
+                       <div class="day">
+                        <p>13</p>
+                       </div>
+                       <div class="day">
+                        <p>14</p>
+                       </div>
+                </div>
+                <div class="row-day">
+                    <div class="day">
+                        <p>15</p>
+                       </div>
+                       <div class="day">
+                        <p>16</p>
+                       </div>
+                       <div class="day">
+                        <p>17</p>
+                       </div>
+                       <div class="day">
+                        <p>18</p>
+                       </div>
+                       <div class="day">
+                        <p>19</p>
+                       </div>
+                       <div class="day">
+                        <p>20</p>
+                       </div>
+                       <div class="day">
+                        <p>21</p>
+                       </div>
+                </div>
+                <div class="row-day">
+                    <div class="day">
+                        <p>22</p>
+                       </div>
+                       <div class="day">
+                        <p>23</p>
+                       </div>
+                       <div class="day">
+                        <p>24</p>
+                       </div>
+                       <div class="day">
+                        <p>25</p>
+                       </div>
+                       <div class="day">
+                        <p>26</p>
+                       </div>
+                       <div class="day">
+                        <p>27</p>
+                       </div>
+                       <div class="day">
+                        <p>28</p>
+                       </div>
+                </div>
+                <div class="row-day">
+                    <div class="day">
+                        <p>29</p>
+                       </div>
+                       <div class="day">
+                        <p>30</p>
+                       </div>
+                       <div class="day">
+                        <p>21</p>
+                       </div>
+                       <div class="day">
+                        <p class="p">1</p>
+                       </div>
+                       <div class="day">
+                        <p class="p">2</p>
+                       </div>
+                       <div class="day">
+                        <p class="p">3</p>
+                       </div>
+                       <div class="day">
+                        <p class="p">4</p>
+                       </div>
+                  
+                   
+                </div>
+                
+            </div>
+            <div class="page-2"></div>
+            <div class="page-3"></div>
+         </div>
+         <div class="row-text-2">
+            <h6>Today activity</h6>
+            <p class="text">Mrng Sport</p>
+            <p class="text">Breakfast & Coffee</p>
+            <h4>Today task</h4>
+
+         </div>
+         <div class="row-footer">
+            <div class="task-box-1">
+              <p>08.00 AM</p>
+              <p>Class</p>
+            </div>
+            <div class="task-box-2">
+                <p>10.00 AM</p>
+                <p>UI Design</p>
+            </div>
+            <div class="task-box-3"></div>
+         </div>
+       </div>
+    </div>
+</body>
+</html>
